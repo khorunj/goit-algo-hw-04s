@@ -1,0 +1,13 @@
+def get_cats_info(path):
+    with open(path, 'r') as file:
+        lines = file.readlines()
+    list_of_cats = []
+    for line in lines:
+        cat_item = line.strip().split(',')
+        cat_dict = {'id': cat_item[0], 'name': cat_item[1], 'age': int(cat_item[2])}
+        list_of_cats.append(cat_dict)
+    return list_of_cats
+
+
+
+print(get_cats_info('cats_info.txt'))
